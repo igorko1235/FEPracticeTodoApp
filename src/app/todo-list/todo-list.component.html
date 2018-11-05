@@ -1,0 +1,7 @@
+<label for="todoText">
+  Todo text
+  <input id="todoText" type="text" [(ngModel)]="todoText">
+</label>
+<button (click)="addTodo()">Add todo!</button>
+
+<app-todo-item *ngFor="let todo of todos" (todoChanged)="todoChanged($event)" [todo]="todo"></app-todo-item>
