@@ -2,7 +2,7 @@
   Todo text
   <input id="todoText" type="text" [(ngModel)]="todoText">
 </label>
-<button (click)="addTodo()">Add todo!</button>
+<button (click)="addTodo()" [disabled]="!todoText.length">Add todo!</button>
 
 <app-todo-item *ngFor="let todo of todos"
                (todoDeleted)="todoDeleted($event)"
