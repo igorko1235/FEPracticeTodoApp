@@ -24,6 +24,11 @@ export class TodoListComponent {
     this.getTodos(); 
   }
 
+  public todoDeleted(todo: TodoModel): void {
+    this.todoService.deleteTodo(todo);
+    this.getTodos();
+  }
+
   public todoChanged(todo: TodoModel): void {
     this.todoService.updateTodo(todo);
     this.getTodos();

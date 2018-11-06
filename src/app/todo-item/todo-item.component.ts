@@ -12,6 +12,7 @@ export class TodoItemComponent implements OnInit {
   isEdit: boolean = false;
   editValue: string = '';
 
+  @Output() todoDeleted: EventEmitter<TodoModel> = new EventEmitter();
   @Output() todoChanged: EventEmitter<TodoModel> = new EventEmitter();
   constructor() { }
 
@@ -35,8 +36,7 @@ export class TodoItemComponent implements OnInit {
     this.isEdit = false;
   }
 
-  onChecked() {
-    this.todo.done = !this.todo.done;
-    this.todoChanged.emit(this.todo);
+  deleteTodo() {
+    this.todoDeleted.emit(this.todo);
   }
 }

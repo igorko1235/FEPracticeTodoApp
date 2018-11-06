@@ -15,14 +15,19 @@ export class TodoService {
   private generateTodo(todoText: string): TodoModel {
     return {
       id: Date.now(),
-      text: todoText,
-      done: false
+      text: todoText
     }
   }
 
   public createTodo(text: string): void {
     const newTodo = this.generateTodo(text);
     this.todos = [...this.todos, newTodo];
+  }
+
+  public deleteTodo(deleteTodo: TodoModel): void {
+    this.todos = this.todos.filter(todo => {
+        return todo.id !== deleteTodo.id;
+    });
   }
 
   public updateTodo(updatedTodo: TodoModel): void {

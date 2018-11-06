@@ -4,4 +4,7 @@
 </label>
 <button (click)="addTodo()">Add todo!</button>
 
-<app-todo-item *ngFor="let todo of todos" (todoChanged)="todoChanged($event)" [todo]="todo"></app-todo-item>
+<app-todo-item *ngFor="let todo of todos"
+               (todoDeleted)="todoDeleted($event)"
+               (todoChanged)="todoChanged($event)"
+               [todo]="todo"></app-todo-item>

@@ -9,11 +9,6 @@
     <button (click)="onCancel()">Cancel</button>
 </div>
 <p *ngIf="!isEdit" (click)="onEdit()">Todo text: {{todo.text}}</p>
-<label [for]="'done' + todo.id">
-    Done <input [id]="'done' + todo.id"
-                type="checkbox"
-                (input)="onChecked()"
-                [(ngModel)]="todo.done">
-</label>
+<button (click)="deleteTodo()">Delete!</button>
 
   
